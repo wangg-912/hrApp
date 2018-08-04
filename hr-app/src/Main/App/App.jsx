@@ -1,45 +1,42 @@
 import React,{Component} from 'react';
-import "whatwg-fetch";
-import "es6-promise";
-class TEST extends Component{
-  constructor(){
-    super();
-    this.state={
-      datas:[]
-    }
-  }
-  clickHandler(){
-    let self = this;
-    fetch('/test.json')
-      .then(function(response) {
-          return response.json()
-      }).then(function(json) {
-        self.update(json)
-          console.log('parsed json', json)
-      }).catch(function(ex) {
-          console.log('parsing failed', ex)
-      })
-  }
-  update(result){
-    this.setState({
-      datas:result.arr
-    })
-  }
-  render(){
-      const datas=this.state.datas;
+import PropTypes from 'prop-types';
+import {withStyles} from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+
+import NestedSwipers from "./Swiper/Index"
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: 160,
+  },
+  control: {
+    padding: theme.spacing.unit * 2,
+  },
+})
+
+class App extends Component{
+    render(){
+      const {classes} = this.props;
       return(
-        <div>
-          <button onClick={this.clickHandler.bind(this)}>Hello,点击展示列表</button>
-            <ul>
-            { datas.map((item,index)=>{
-              return <li key={index}>{item.names}</li>
-            })}
-          </ul>
+        <div className={classes.root}>
+          <Grid container spacing={24}>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <NestedSwipers />
+              </Paper>
+            </Grid>
+          </Grid>
         </div>
       )
-  }
+    }
+}
+App.propTypes = {
+  classes:PropTypes.object.isRequired
 }
 
-
-
-export default TEST
+const Main =  withStyles(styles)(App)
+ export default Main;
