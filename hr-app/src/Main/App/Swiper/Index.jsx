@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
 import "react-id-swiper/src/styles/css/swiper.css";
-import "./Index.css"
+import "./Index.css";
+import one from "../../../images/1.jpg";
+import two from "../../../images/2.jpg";
+import three from "../../../images/3.jpg";
+import four from "../../../images/4.jpg";
+import five from "../../../images/5.jpg";
     
 export default class NestedSwipers extends Component {
       render() {
         const HorizontalSwiperParams = {
-          spaceBetween: 1000,
+          spaceBetween: 30,
+          speed:650,
           centeredSlides: true,
           autoplay: {
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false
           },
           pagination: {
@@ -22,11 +28,11 @@ export default class NestedSwipers extends Component {
     
         return (
             <Swiper {...HorizontalSwiperParams} >
-            <div>轮播图 1</div>
-            <div>轮播图 2</div>
-            <div>轮播图 3 </div>
-            <div>轮播图 4</div>
-            <div>轮播图 5</div>
+            <div><img src={one} alt='pag1' className='image-item'/></div>
+            <div><img src={two} alt='pag2' className='image-item'/></div>
+            <div><img src={three} alt='pa3' className='image-item'/></div>
+            <div><img src={four} alt='pag4' className='image-item'/></div>
+            <div><img src={five} alt='pag5' className='image-item'/></div>
           </Swiper>
         );
       }

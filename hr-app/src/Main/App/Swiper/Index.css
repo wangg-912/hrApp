@@ -7,3 +7,14 @@
     z-index: 1;
     height: inherit;
 }
+.slide-item{
+    width: inherit;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.image-item{
+    border: 0;
+    width: inherit;
+    height: 160px;
+    border-radius: 5px
+}
