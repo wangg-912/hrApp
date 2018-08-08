@@ -1,21 +1,15 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 
-import NestedSwipers from "./Swiper/Index"
+import PostComponent from "./PostManage/Index";
+import "./App.css"
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-  },
-  paper: {
-    height: 160,
-  },
-  control: {
-    padding: theme.spacing.unit * 2,
-  },
+  }
+
 })
 
 class App extends Component{
@@ -23,13 +17,7 @@ class App extends Component{
       const {classes} = this.props;
       return(
         <div className={classes.root}>
-          <Grid container spacing={24}>
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <NestedSwipers />
-              </Paper>
-            </Grid>
-          </Grid>
+          <PostComponent />
         </div>
       )
     }
