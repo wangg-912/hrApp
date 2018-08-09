@@ -7,7 +7,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 
-import PostManager from "../PostManage/Index"
+import PostManager from "../PostManage/Index";
+import PersonManager from "../PersonalCenter/Index"
 
 
 function TabContainer({ children, dir }) {
@@ -70,7 +71,9 @@ class FullWidthTabs extends React.Component {
           <TabContainer dir={theme.direction}>
             <PostManager />
           </TabContainer>
-          <TabContainer dir={theme.direction}>Item Two</TabContainer>
+          <TabContainer dir={theme.direction}>
+            <PersonManager />
+          </TabContainer>
         </SwipeableViews>
       </div>
     );
