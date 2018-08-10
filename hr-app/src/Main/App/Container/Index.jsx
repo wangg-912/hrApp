@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from "react-router-dom"
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import SwipeableViews from 'react-swipeable-views';
@@ -50,6 +51,7 @@ class FullWidthTabs extends React.Component {
   render() {
     const { classes, theme } = this.props;
     return (
+      <Router>
       <div className={classes.root}>
         <AppBar position="static" color="default">
           <Tabs
@@ -76,6 +78,7 @@ class FullWidthTabs extends React.Component {
           </TabContainer>
         </SwipeableViews>
       </div>
+      </Router>
     );
   }
 }

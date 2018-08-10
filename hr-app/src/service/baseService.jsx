@@ -8,7 +8,8 @@ export const FetchHTML = options =>{
 /**
  * 
  * @param {*} options 
- * @param 
+ * @param url  string 获取本地json文件
+ * @param callback function 成功和失败的回调
  */
 export const FetchJSON = options =>{//GET location json
     fetch(options.url,{
@@ -26,6 +27,8 @@ export const FetchJSON = options =>{//GET location json
 /**
  * 
  * @param {*} options 
+ * @param url  string GET 方法
+ * @param callback function 成功和失败的回调
  */
 export const FetchGET = options =>{ //GET service or GET location
     fetch(options.url)
@@ -41,6 +44,8 @@ export const FetchGET = options =>{ //GET service or GET location
 /**
  * 
  * @param {*} options 
+ * @param url  string POST 方法
+ * @param callback function 成功和失败的回调
  */
 export const FetchPOST = options =>{
     fetch(options.url,{
@@ -63,6 +68,8 @@ export const FetchPOST = options =>{
 /**
  * 
  * @param {*} options 
+ * @param url  string PostFrom 方法
+ * @param callback function 成功和失败的回调
  */
 export const FetchPostForm = options =>{
     let formData = new FormData(options.form);
@@ -83,6 +90,8 @@ export const FetchPostForm = options =>{
 /**
  * 
  * @param {*} options 
+ * @param url  string PUT 方法
+ * @param callback function 成功和失败的回调
  */
 export const FetchPUT = options =>{
     fetch(options.url,{
@@ -106,6 +115,8 @@ export const FetchPUT = options =>{
 /**
  * 
  * @param {*} options 
+ * @param url  string DELETE 方法
+ * @param callback function 成功和失败的回调
  */
 export const FetchDELETE = options =>{
     fetch(options.url,{
